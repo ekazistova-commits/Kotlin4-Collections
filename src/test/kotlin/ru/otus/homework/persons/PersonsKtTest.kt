@@ -16,6 +16,20 @@ class PersonsKtTest {
 
     @Test
     fun sortsByAge() {
+        println("=== СОРТИРОВКА ПО УБЫВАНИЮ ВОЗРАСТА ===")
+
+        println("\n📋 Перемешанный список persons:")
+        persons.forEachIndexed { index, person ->
+            println("   ${index + 1}. ${person.name} ${person.surname} - ${person.age} лет")
+        }
+
+        val result = persons.sortByAge()
+
+        println("\n🔽 Сортировка по убыванию возраста:")
+        result.forEachIndexed { index, person ->
+            println("   ${index + 1}. ${person.name} ${person.surname} - ${person.age} лет")
+        }
+
         assertEquals(
             listOf(P5, P4, P3, P2, P1),
             persons.sortByAge()
@@ -24,6 +38,21 @@ class PersonsKtTest {
 
     @Test
     fun sortsByNames() {
+        println("=== СОРТИРОВКА ПО АЛФАВИТУ (ФАМИЛИЯ + ИМЯ) ===")
+
+        println("\n📋 Перемешанный список persons:")
+        persons.forEachIndexed { index, person ->
+            println("   ${index + 1}. ${person.name} ${person.surname} - ${person.age} лет")
+        }
+
+        val result = persons.sortByName()
+
+        println("\n🔤 Сортировка по алфавиту (фамилия + имя):")
+        result.forEachIndexed { index, person ->
+            println("   ${index + 1}. ${person.name} ${person.surname} - ${person.age} лет")
+        }
+
+
         assertEquals(
             listOf(P1, P2, P3, P4, P5),
             persons.sortByName()
